@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="Home">
+    <el-button type="info" @click="logout">退出</el-button>
+    
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+
+@Component
+
+export default class Home extends Vue {
+  private logout() {
+    window.sessionStorage.clear();
+    this.$router.push('/');
+  }
+}
 </script>
+
+<style lang="less" ref="stylesheet/less" scoped>
+</style>

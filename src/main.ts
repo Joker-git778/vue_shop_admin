@@ -5,6 +5,10 @@ import store from './store'
 
 // 导入elemnt-ui组件
 import './utils/element-components';
+// 初始化css
+import 'normalize.css/normalize.css';
+// icon css
+import './assets/font/iconfont.css';
 
 Vue.config.productionTip = false
 
