@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 
-const Login = () => import(/* webpackChunkName: 'login' */ '../views/Login.vue');
-const Home = () => import(/* webpackChunkName: 'home' */ '../views/Home.vue');
+const Login = () => import(/* webpackChunkName: 'login' */ '../views/login.vue');
+const Home = () => import(/* webpackChunkName: 'home' */ '../views/home.vue');
+const Welcome = () => import(/* webpackChunkName: 'Welcome' */ '../views/welcome.vue');
+const Users = () => import(/* webpackChunkName: 'users' */ '../views/users.vue');
+const Roles = () => import(/* webpackChunkName: 'roles' */ '../views/roles.vue')
 
 Vue.use(VueRouter)
 
@@ -15,7 +18,25 @@ const routes: Array<RouteConfig> = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    redirect: '/home/welcome',
+    component: Home,
+    children: [
+      {
+        path: 'welcome',
+        name: 'Welcome',
+        component: Welcome,
+      },
+      {
+        path: 'users',
+        name: 'Users',
+        component: Users,
+      },
+      {
+        path: 'roles',
+        name: 'Roles',
+        component: Roles,
+      },
+    ]
   },
   {
     path: '',

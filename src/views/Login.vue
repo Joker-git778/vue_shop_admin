@@ -31,7 +31,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import { loginFormType, loginFormRulesType } from "../utils/data-interface";
 import { validatePass } from "../utils/validate";
 
-import { reqLogin } from "../api/user";
+import { reqLogin } from "../api/login";
 
 @Component 
 export default class Login extends Vue {

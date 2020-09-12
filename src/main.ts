@@ -9,6 +9,8 @@ import './utils/element-components';
 import 'normalize.css/normalize.css';
 // icon css
 import './assets/font/iconfont.css';
+// 全局css
+import './assets/less/global.less';
 
 Vue.config.productionTip = false
 
